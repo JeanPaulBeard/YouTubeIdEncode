@@ -5,21 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="https://jeanpaulbeard.github.io/app/img/jeanpaul_logo_128.png" type="image/png">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
     <title>YouTube ID Encode</title>
     <script src="b64.js"></script>
 </head>
 
 <body>
-    <h1>Youtube id encode and decode</h1>
-    <h3 id="encode">Encode: </h3>
-    <h3 id="decode">Decode: </h3>
+    
+    <div class="container-fluid">
 
+        <div class="login d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mx-auto">
+                        <h3 class="login-heading mb-4">Youtube id encode and decode</h3>
+                        <form>
+                            <div class="form-label-group">
+                                <input type="number" id="encode" class="form-control" placeholder="Decoded number" value="79784847088215"
+                                    autofocus>
+                                <label for="encode">Decoded number</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="text" id="decode" class="form-control" placeholder="Coded number">
+                                <label for="decode">Coded number</label>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
     <script>
-        window.onload = function(e) {
+        window.onload = function (e) {
             //console.log(encode64(79715037088278));
             //console.log(decode64('BEARD'));
-            document.getElementById('encode').innerHTML += encode64(79715037088278);
-            document.getElementById('decode').innerHTML += decode64('BEARD');
+            var decode = document.getElementById('decode');
+            var encode = document.getElementById('encode');
+
+            decode.value = encode64(encode.value);
+
+            decode.addEventListener("keyup", function () {
+                if (this.value != '') {
+                    encode.value = decode64(this.value);
+                }
+            });
+
+            encode.addEventListener("keyup", function () {
+                if (this.value != '') {
+                    decode.value = encode64(this.value);
+                }
+            });
         };
     </script>
 </body>
