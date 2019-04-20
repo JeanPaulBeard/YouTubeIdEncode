@@ -1,3 +1,7 @@
+<p align="center"> 
+    <img src="https://jeanpaulbeard.github.io/app/img/jeanpaul_logo_128.png">
+</p>
+
 # YouTube Id Encode
 Encode numeric strings in fully compatible custom base64 to be sent by URL
 
