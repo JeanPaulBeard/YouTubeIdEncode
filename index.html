@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YouTube ID Encode</title>
+    <script src="b64.js"></script>
+</head>
+
+<body>
+    <h1>Youtube id encode and decode</h1>
+    <h3 id="encode">Encode: </h3>
+    <h3 id="decode">Decode: </h3>
+
+    <script>
+        window.onload = function(e) {
+            //console.log(encode64(79715037088278));
+            //console.log(decode64('BEARD'));
+            document.getElementById('encode').innerHTML += encode64(79715037088278);
+            document.getElementById('decode').innerHTML += decode64('BEARD');
+        };
+    </script>
+</body>
+
+</html>
